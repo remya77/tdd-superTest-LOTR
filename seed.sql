@@ -1,0 +1,12 @@
+CREATE DATABASE supertest_lab;
+\c supertest_lab;
+CREATE TABLE people (id SERIAL, name VARCHAR(64) NOT NULL, age INT NOT NULL, ancestry VARCHAR(16) NOT NULL);
+INSERT INTO people (name, age, ancestry) VALUES ('Gandalf', 2000, 'Maiar');
+INSERT INTO people (name, age, ancestry) VALUES ('Legolas', 2931, 'Elf');
+INSERT INTO people (name, age, ancestry) VALUES ('Gimli', 139, 'Dwarf');
+INSERT INTO people (name, age, ancestry) VALUES ('Aragorn', 87, 'Human');
+INSERT INTO people (name, age, ancestry) VALUES ('Frodo', 50, 'Hobbit');
+INSERT INTO people (name, age, ancestry) VALUES ('Boromir', 40, 'Human');
+INSERT INTO people (name, age, ancestry) VALUES ('Sam', 38, 'Hobbit');
+INSERT INTO people (name, age, ancestry) VALUES ('Meri', 36, 'Hobbit');
+INSERT INTO people (name, age, ancestry) VALUES ('Pippin', 36, 'Hobbit');
