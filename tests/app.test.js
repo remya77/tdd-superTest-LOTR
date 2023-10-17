@@ -1,5 +1,5 @@
 const request = require('supertest');
-const {app, server, client} = require('../app');
+const {app, server, pool} = require('../app');
 
 describe('Test the root path', () => {
 	test('It should respond with "Hello World!"', async () => {
@@ -91,7 +91,7 @@ describe('Test bad create request', ()=>{
 afterAll(done => {
 	// Closing the connection allows Jest to exit successfully.
 	server.close()
-	client.end()
+	pool.end()
 	done()
 })
 

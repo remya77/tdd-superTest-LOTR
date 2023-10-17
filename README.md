@@ -8,7 +8,9 @@ You have a partially implemented API and some tests that have already been writt
 
 ### Getting Set Up
 
-Seed your database like so:
+1. Run `npm i` to install the packages.
+
+1. Seed your database like so:
 
 ```
 psql -f seed.sql -U postgres
