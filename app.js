@@ -24,7 +24,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/people', async (req, res)=>{
-	// const result = await client.query("SELECT * FROM people");
 	const result = await pool.query("SELECT * FROM people");
 	res.json(result.rows);
 });

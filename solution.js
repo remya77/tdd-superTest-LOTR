@@ -26,26 +26,26 @@ app.get('/', (req, res) => {
 app.get('/people', async (req, res)=>{
 	let result;
 	if(req.query.olderThan && req.query.ancestry) {
-		result = await client.query(`SELECT * FROM people WHERE age>'${req.query.olderThan}' AND ancestry='${req.query.ancestry}'`);
+		result = await pool.query(`SELECT * FROM people WHERE age>'${req.query.olderThan}' AND ancestry='${req.query.ancestry}'`);
 	} else if(req.query.youngerThan && req.query.ancestry) {
-		result = await client.query(`SELECT * FROM people WHERE age<'${req.query.youngerThan}' AND ancestry='${req.query.ancestry}'`);
+		result = await pool.query(`SELECT * FROM people WHERE age<'${req.query.youngerThan}' AND ancestry='${req.query.ancestry}'`);
 	} else if(req.query.youngerThan) {
-		result = await client.query(`SELECT * FROM people WHERE age<'${req.query.youngerThan}'`);
+		result = await pool.query(`SELECT * FROM people WHERE age<'${req.query.youngerThan}'`);
 	} else if(req.query.olderThan) {
-		result = await client.query(`SELECT * FROM people WHERE age>'${req.query.olderThan}'`);
+		result = await pool.query(`SELECT * FROM people WHERE age>'${req.query.olderThan}'`);
 	} else if(req.query.name) {
-		result = await client.query(`SELECT * FROM people WHERE name='${req.query.name}'`);
+		result = await pool.query(`SELECT * FROM people WHERE name='${req.query.name}'`);
 	} else if(req.query.ancestry) {
-		result = await client.query(`SELECT * FROM people WHERE ancestry='${req.query.ancestry}'`);
+		result = await pool.query(`SELECT * FROM people WHERE ancestry='${req.query.ancestry}'`);
 	} else {
-		result = await client.query("SELECT * FROM people");
+		result = await pool.query("SELECT * FROM people");
 	}
 	res.json(result.rows);
 });
 
 app.post('/people', async (req, res)=>{
 	try {
-		const result = await client.query('INSERT INTO people (name, age, ancestry) VALUES ($1, $2, $3);', [req.body.name, req.body.age, req.body.ancestry]);
+		const result = await pool.query('INSERT INTO people (name, age, ancestry) VALUES ($1, $2, $3);', [req.body.name, req.body.age, req.body.ancestry]);
 		res.json({success:true});
 	} catch (e){
 		res.status(400).json({success:false});
@@ -59,5 +59,5 @@ pool.connect(()=>{
 server = app.listen(PORT, () => {
 	console.log(`Server listening on port ${PORT}`);
 });
-module.exports = {app, server, client} // this is so we can stop the server programmatically 
+module.exports = {app, server, pool} // this is so we can stop the server programmatically 
 
