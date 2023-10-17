@@ -11,8 +11,10 @@ You have a partially implemented API and some tests that have already been writt
 Seed your database like so:
 
 ```
-psql -f seed.sql postgres
+psql -f seed.sql -U postgres
 ```
+
+NOTE - the password for user postgres is `postgres`
 
 ### Running tests
 
