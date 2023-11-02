@@ -4,7 +4,9 @@
 
 ### Description
 
-You have a partially implemented API and some tests that have already been written for it. As TDD suggests, the testing part of the code has been completed first, leaving your to write the express code so that all tests pass.
+You have a partially implemented API and some tests that have already been written for it. As TDD suggests, the testing part of the code has been completed first, leaving your to write the express routing code in `app.js` so that all tests pass.
+
+NOTE - This lab may ask you to write Express routes that accept query parameters. [Here is an article to help you out.](https://stackabuse.com/get-query-strings-and-parameters-in-express-js/)
 
 ### Getting Set Up
 
