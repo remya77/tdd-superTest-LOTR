@@ -1,5 +1,6 @@
 CREATE DATABASE supertest_lab;
 \c supertest_lab;
+DROP TABLE people;
 CREATE TABLE people (id SERIAL, name VARCHAR(64) NOT NULL, age INT NOT NULL, ancestry VARCHAR(16) NOT NULL);
 INSERT INTO people (name, age, ancestry) VALUES ('Gandalf', 2000, 'Maiar');
 INSERT INTO people (name, age, ancestry) VALUES ('Legolas', 2931, 'Elf');
