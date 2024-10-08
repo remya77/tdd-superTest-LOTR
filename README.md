@@ -18,13 +18,28 @@ NB: This lab will ask you to evaluate query parameters sent in the URL path stri
 
 1. Run `npm i` to install the packages.
 
-1. Seed your database like so:
+1. Seed your database like so (if you're working in a VM, please see instructions below):
 
 ```
 psql -f seed.sql -U postgres
 ```
 
 NOTE - the password for user postgres is `postgres`
+
+<br>
+
+#### Steps to seed your database in the VM
+
+We'll use Docker for our Postgresql instance in the VM.
+
+1. Start a Postgresql Docker container: `sudo docker run -d --name postgresDocker -p 5432:5432 -e POSTGRES_PASSWORD=pass123 postgres`
+2. Copy the seeds file to the container: `sudo docker cp seed.sql postgresDocker:/seed.sql`
+3. Get into the bash shell of the container: `sudo docker exec -it postgresDocker /bin/bash`
+4. Run the seeds file inside the container: `psql -U postgres < seed.sql`
+5. In `app.js`, on line 16, change the password to `pass123`
+
+
+<br>
 
 ### Running tests
 
