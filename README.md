@@ -10,7 +10,7 @@ You have a partially implemented API and some tests that have already been writt
 
 NB: This lab will ask you to evaluate query parameters sent in the URL path string. [Here is an article to help you out.](https://stackabuse.com/get-query-strings-and-parameters-in-express-js/)
 
-### Getting Set Up
+### Getting Set Up (If you're using a VM please see the steps below!)
 
 1. Open this repo in VS Code
 
@@ -28,7 +28,7 @@ NOTE - the password for user postgres is `postgres`
 
 <br>
 
-#### Steps to seed your database in the VM
+### Steps to seed your database in the VM
 
 We'll use Docker for our Postgresql instance in the VM.
 
