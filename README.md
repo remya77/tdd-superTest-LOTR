@@ -1,4 +1,4 @@
-# Lab: Testing Express with Jest and SuperTest
+# LOTR Activity: Testing Express with Jest and SuperTest
 
 ## Directions
 
