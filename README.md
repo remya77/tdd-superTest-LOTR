@@ -30,6 +30,11 @@ NOTE - the password for user postgres is `postgres`
 
 ### Steps to seed your database in the VM
 
+
+1. Open this repo in VS Code
+1. Open the integrated terminal
+1. Run `npm i` to install the packages.
+
 We'll use Docker for our Postgresql instance in the VM.
 
 1. Start a Postgresql Docker container: `sudo docker run -d --name postgresDocker -p 5432:5432 -e POSTGRES_PASSWORD=pass123 postgres`
