@@ -2,7 +2,7 @@
 
 ## Directions
 
-Fork and clone this repository.
+Clone this repository.
 
 ### Description
 
