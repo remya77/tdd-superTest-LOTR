@@ -88,6 +88,14 @@ describe('Test bad create request', ()=>{
 	});
 })
 
+describe('Test update age', ()=>{
+	test('It should respond with {success:true}', async () => {
+		const response = await request(app).put('/people/5').send({age:'51'});
+		expect(response.text).toBe(JSON.stringify({success:true}));
+		expect(response.statusCode).toBe(200);
+	});
+})
+
 afterAll(done => {
 	// Closing the connection allows Jest to exit successfully.
 	server.close()
